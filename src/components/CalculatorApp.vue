@@ -60,11 +60,7 @@ export default {
       this.amountString = this.amount.toFixed(2);
       this.totalPersonaString = (this.bill / this.number + this.amount).toFixed(2);
 
-      if(this.bill==0){
-        this.amountString="0.00"
-        this.totalPersonaString="0.00"
-      }
-      if(this.number==0){
+      if(this.bill==0 && this.number==0){
         this.amountString="0.00"
         this.totalPersonaString="0.00"
       }
