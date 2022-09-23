@@ -50,7 +50,6 @@ export default {
       amountString: "0.00",
       totalPersonaString: "0.00",
       amount: 0,
-      totalPersona: 0,
       agregar: null,
     }
   },
@@ -63,14 +62,16 @@ export default {
 
       if(this.bill==0){
         this.amountString="0.00"
+        this.totalPersonaString="0.00"
       }
       if(this.number==0){
+        this.amountString="0.00"
         this.totalPersonaString="0.00"
       }
     },
     agregarvalor(){
       this.amount = (this.bill * (parseInt(this.agregar )/ 100)) / this.number;
-      console.log(this.amount)
+      // console.log(this.amount)
       this.amountString = this.amount.toFixed(2);
       this.totalPersonaString = (this.bill / this.number + this.amount).toFixed(2);
     },
