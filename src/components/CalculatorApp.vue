@@ -10,7 +10,7 @@
         <input type="button" value="15%" class="btnPorcentaje" v-on:click="calcular(15)" />
         <input type="button" value="25%" class="btnPorcentaje" v-on:click="calcular(25)" />
         <input type="button" value="50%" class="btnPorcentaje" v-on:click="calcular(50)" />
-        <input type="text" placeholder="Cusston" class="num" id="num" v-model="agregar" v-on:keyup.enter="agregarvalor(agregar)" />
+        <input type="text" placeholder="Cusstom" class="num" id="num" v-model="agregar" v-on:keyup.enter="agregarvalor(agregar)" />
       </div>
       <div>
         <label for="" class="margin">Number of People</label>
