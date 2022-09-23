@@ -14,7 +14,7 @@
       </div>
       <div>
         <label for="" class="margin">Number of People</label>
-        <input v-on:input="calcular(porcentaje)" type="text" id="number" v-model="number" required/>
+        <input v-on:input="calcular(porcentaje)" type="text" id="number" v-model="number" />
         <!-- <div class="valid-feedback">
             Looks good!
           </div> -->
