@@ -15,8 +15,8 @@ export default {
 
 <style>
 #app {
-  width: 40%;
-  height: 40%;
+  width: 90vh;
+  height: 45vh;
   font-family: 'Space Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -26,14 +26,14 @@ html{
     height: 100vh;
 }
 body{
-    height: 100%;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: hsl(185, 41%, 84%);
     background-image: url(../public/logo.svg);
     background-repeat: no-repeat;
-    background-position: center 25%;
+    background-position: center 20%;
     font-family: 'Space Mono', monospace;
 }
 </style>

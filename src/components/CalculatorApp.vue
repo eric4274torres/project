@@ -1,5 +1,5 @@
 <template>
-  <form class="principal">
+  <form class="principal needs-validation">
     <div class="form1">
       <label>Bill</label>
       <input v-on:input="calcular(porcentaje)" v-model="bill" type="text" id="bill" />
@@ -12,8 +12,13 @@
         <input type="button" value="50%" class="btnPorcentaje" v-on:click="calcular(50)" />
         <input type="text" placeholder="Cusston" class="num" id="num" v-model="agregar" v-on:keyup.enter="agregarvalor(agregar)" />
       </div>
-      <label for="" class="margin">Number of People</label>
-      <input v-on:input="calcular(porcentaje)" type="text" id="number" v-model="number" />
+      <div>
+        <label for="" class="margin">Number of People</label>
+        <input v-on:input="calcular(porcentaje)" type="text" id="number" v-model="number" required/>
+        <div class="valid-feedback">
+            Looks good!
+          </div>
+      </div>
     </div>
     <div class="form2">
       <div class="display">
@@ -46,7 +51,7 @@ export default {
       totalPersonaString: "0.00",
       amount: 0,
       totalPersona: 0,
-      agregar: ""
+      agregar: null,
     }
   },
   methods: {
@@ -59,6 +64,9 @@ export default {
       if(this.bill==0){
         this.amountString="0.00"
       }
+      if(this.number==0){
+        this.totalPersonaString="0.00"
+      }
     },
     agregarvalor(){
       this.amount = (this.bill * (parseInt(this.agregar )/ 100)) / this.number;
@@ -67,11 +75,11 @@ export default {
       this.totalPersonaString = (this.bill / this.number + this.amount).toFixed(2);
     },
     reset(){
-      this.bill=0;
-      this.number=0;
+      this.bill=null;
+      this.number=null;
       this.amountString="0.00"
       this.totalPersonaString="0.00"
-      this.agregar=""
+      this.agregar=null
     }
   }
 }
@@ -129,7 +137,7 @@ export default {
 }
 
 .margin {
-  margin-top: 11%;
+  margin-top: 10%;
 }
 
 .form2 input {
@@ -180,7 +188,7 @@ export default {
 #res {
   font-family: "Space Mono", monospace;
   font-size: 24px;
-  margin-top: 25%;
+  margin-top: 35%;
 }
 
 label {
