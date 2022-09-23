@@ -5,11 +5,11 @@
       <input v-on:input="calcular(porcentaje)" v-model="bill" type="text" id="bill" />
       <label class="margin">Select Tip %</label>
       <div class="botones">
-        <input type="button" value="5%" class="btnPorcentaje" v-on:click="calcular(5)" />
-        <input type="button" value="10%" class="btnPorcentaje" v-on:click="calcular(10)" />
-        <input type="button" value="15%" class="btnPorcentaje" v-on:click="calcular(15)" />
-        <input type="button" value="25%" class="btnPorcentaje" v-on:click="calcular(25)" />
-        <input type="button" value="50%" class="btnPorcentaje" v-on:click="calcular(50)" />
+        <HelloWorld numero="5%" class="btnPorcentaje" v-on:click="calcular(5)"/>
+        <HelloWorld numero="10%" class="btnPorcentaje" v-on:click="calcular(10)"/>
+        <HelloWorld numero="15%" class="btnPorcentaje" v-on:click="calcular(15)"/>
+        <HelloWorld numero="25%" class="btnPorcentaje" v-on:click="calcular(25)"/>
+        <HelloWorld numero="50%" class="btnPorcentaje" v-on:click="calcular(50)"/>
         <input type="text" placeholder="Cusstom" class="num" id="num" v-model="agregar" v-on:keyup.enter="agregarvalor(agregar)" />
       </div>
       <div>
@@ -40,8 +40,13 @@
 </template>
 
 <script>
-
+import HelloWorld from './HelloWorld.vue';
+  
 export default {
+  name:'CalculatorApp',
+  components:{
+    HelloWorld
+},
   data() {
     return {
       bill: 142.55,

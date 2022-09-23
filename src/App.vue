@@ -1,5 +1,5 @@
 <template>
-  <CalculatorApp></CalculatorApp>
+  <CalculatorApp/>
 </template>
 
 <script>
