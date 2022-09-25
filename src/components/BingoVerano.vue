@@ -203,7 +203,7 @@ export default {
     name:'BingoVerano',
     data(){
         return{
-            numero:0,
+            numero:[],
             numiInicial:1,
             numFinal:75,
             letra:null
@@ -211,13 +211,25 @@ export default {
     },
     methods:{
         numaleatorio(){
-            this.numero=(Array.from({ length: 75 }, (_, i) => i + 1)).sort(() => Math.random() - 0.5);
-            if(this.numero>=1 && this.numero<=15)this.letra="B"
-            if(this.numero>=16 && this.numero<=30)this.letra="I"
-            if(this.numero>=31 && this.numero<=45)this.letra="N"
-            if(this.numero>=46 && this.numero<=60)this.letra="G"
-            if(this.numero>=61 && this.numero<=75)this.letra="O"
-            console.log(this.letra+""+ this.numero)
+            this.numero=Math.round(Math.random()*(this.numiInicial-this.numFinal)+this.numFinal);
+
+
+            if(this.numero>=1 && this.numero<=15){
+                this.letra='B'
+            }
+            if(this.numero>=16 && this.numero<=30){
+                this.letra='I'
+            }
+            if(this.numero>=31 && this.numero<=45){
+                this.letra='N'
+            }
+            if(this.numero>=46 && this.numero<=60){
+                this.letra='G'
+            }
+            if(this.numero>=61 && this.numero<=75){
+                this.letra='O'
+            }
+            console.log(this.letra+""+this.numero);
         }
     }
 
