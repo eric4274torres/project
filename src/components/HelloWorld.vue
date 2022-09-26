@@ -6,7 +6,13 @@
 export default {
   name:'HelloWorld',
   props:{
-    numero:Number
+    porsentaje:{
+      numero:5,
+      numero1:10,
+      numero2:15,
+      numero3:25,
+      numero4:50
+    }
   }
 }
 </script>

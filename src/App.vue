@@ -1,25 +1,25 @@
 <template>
-  <BingoVerano/>
-  <!-- <CalculatorApp/> -->
+  <!-- <BingoVerano/> -->
+  <CalculatorApp/>
 </template>
 
 <script>
-// import CalculatorApp from './components/CalculatorApp.vue';
-import BingoVerano from './components/BingoVerano.vue';
+import CalculatorApp from './components/CalculatorApp.vue';
+// import BingoVerano from './components/BingoVerano.vue';
 
 export default {
   name: 'App',
   components: {
-    // CalculatorApp,
-    BingoVerano
+    CalculatorApp
+    // BingoVerano
 }
 }
 </script>
 
 <style>
 #app {
-  width: 100vh;
-  height: 100vh;
+  width: 90vh;
+  height: 45vh;
   font-family: 'Space Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -33,10 +33,10 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: hsl(185, 41%, 84%);
+    background-color: hsl(185, 41%, 84%);
     background-image: url(../public/logo.svg);
     background-repeat: no-repeat;
-    background-position: center 20%; */
+    background-position: center 20%;
     font-family: 'Space Mono', monospace;
 }
 </style>

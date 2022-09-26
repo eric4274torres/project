@@ -5,11 +5,7 @@
       <input v-on:input="calcular(porcentaje)" v-model="bill" type="text" id="bill" />
       <label class="margin">Select Tip %</label>
       <div class="botones">
-        <HelloWorld numero="5%" class="btnPorcentaje" v-on:click="calcular(5)"/>
-        <HelloWorld numero="10%" class="btnPorcentaje" v-on:click="calcular(10)"/>
-        <HelloWorld numero="15%" class="btnPorcentaje" v-on:click="calcular(15)"/>
-        <HelloWorld numero="25%" class="btnPorcentaje" v-on:click="calcular(25)"/>
-        <HelloWorld numero="50%" class="btnPorcentaje" v-on:click="calcular(50)"/>
+        <HelloWorld class="btnPorcentaje" v-on:click="calcular" v-for="i in 5" :key="i" />
         <input type="text" placeholder="Cusstom" class="num" id="num" v-model="agregar" v-on:keyup.enter="agregarvalor(agregar)" />
       </div>
       <div>
