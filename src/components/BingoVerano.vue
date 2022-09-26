@@ -1,9 +1,9 @@
 <template>
-   <div class="principal">
+    <div class="principal">
         <div class="bingo">
-            <!-- <img src="" alt="" width="15%" height="15%"> -->
+            <!-- <img src="imagen/emoji (1).png" alt="" width="15%" height="15%"> -->
             <h1>Bingo Verano</h1>
-            <!-- <img src="" alt="" width="15%" height="15%"> -->
+            <!-- <img src="imagen/emoji.png" alt="" width="15%" height="15%"> -->
         </div>
         <div class="jugadores">
             <div class="player">
@@ -51,7 +51,9 @@
                 </table>
             </div>
             <div class="balota">
-                <p>Balota</p>
+                <div class="blt">
+                    <p>Balota<br>{{letra}}<span>{{numero}}</span></p>
+                </div>
             </div>
             <div class="cpu">
                 <table>
@@ -98,12 +100,14 @@
                 </table>
             </div>
         </div>
-        <button class="btn" v-on:click="numaleatorio">Estoy listo</button>
+        <div class="listo">
+            <input type="button" value="Estoy listo" class="btn btn-light" v-on:click="numaleatorio">
+        </div>
         <p>Listado de balotas</p>
         <div class="listado">
             <table>
                 <tr>
-                    <td>B</td>
+                    <td class="b">B</td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -121,7 +125,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td>I</td>
+                    <td class="i">I</td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -139,7 +143,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td>N</td>
+                    <td class="n">N</td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -157,7 +161,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td>G</td>
+                    <td class="g">G</td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -175,7 +179,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td>O</td>
+                    <td class="o">O</td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -194,7 +198,7 @@
                 </tr>
             </table>
         </div>
-        <button>Comenzar de nuevo</button>
+        <input type="button" value="Comenzar de nuevo" class="btn btn-light">
     </div>
 </template>
 
@@ -203,10 +207,10 @@ export default {
     name:'BingoVerano',
     data(){
         return{
-            numero:[],
+            numero:0,
             numiInicial:1,
             numFinal:75,
-            letra:null
+            letra:'#'
         }
     },
     methods:{
@@ -241,19 +245,22 @@ export default {
     width: 100%;
     height: 100%;
     padding: 1%;
-    background-color: antiquewhite;
 }
 .bingo{
-    margin: auto;
-    margin-bottom: 1%;
-    width: 35%;
+    margin: 0;
+    margin-bottom: 2%;
     display: flex;
-    justify-content: space-between;
-    background-color: brown;
+    align-items: center;
+    justify-content: center;
+    
 }
 h1{
     font-size: 34px;
-    margin: 0;
+}
+.listo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .jugadores{
     width: 90%;
@@ -261,12 +268,10 @@ h1{
     display: flex;
     justify-content: space-between;
     margin: auto;
-    background-color: aqua;
 }
 .player,.cpu{
     width: 35%;
-    border: 1px solid black;
-    padding: 5px;
+    padding: 10px;
     border-radius: 15px;
 }
 .player td, .cpu td{
@@ -288,10 +293,32 @@ h1{
 .bordertopright{
     border-top-right-radius: 15px;
 }
+.b{
+    background-color: #4ebeea;
+
+}
+.i{
+    background-color: #de3935;
+}
+.n{
+    background-color: #e8d415;
+}
+.g{
+    background-color: #48cc76;
+}
+.o{
+    background-color: #a557eb;
+}
+.b,.i,.n,.g,.o{
+    font-size: 30px;
+    font-weight: bolder;
+}
 .listado{
     height: 30%;
     border: 1px solid black;
-    padding: 5px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: antiquewhite;
 }
 .listado td{
     width: 70px;
@@ -300,22 +327,40 @@ h1{
     border: 1px solid black;
 }
 .image{
+    /* background-image: url(imagen/estrella.png);
+    background-repeat: no-repeat;
+    background-position: center; */
     background-size: 100%;
 }
 .balota{
     width: 20%;
-    height: 50%;
+    height: 47%;
     border-radius: 50%;
     margin: auto;
-    background-color: azure;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4ebeea;
     text-align: center;
 }
 .btn{
-    width: 15%;
-    height: 4%;
     font-size: 18px;
-    margin: 0 42%;
     margin-top: 2%;
+}
+.player{
+    background-color: #4ebeea;
+}
+.cpu{
+    background-color: red;
+}
+.blt{
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
 }
 button{
     width: 20%;
@@ -324,12 +369,23 @@ button{
     margin-top: 4%;
 }
 p{
-    margin-top: 3%;
-    font-size: 16px;
+    margin: 0;
+    margin-top: 2%;
+    padding: 0;
+    font-size: 24px;
+    
 }
 table{
     width: 100%;
     height: 100%;
     border-collapse: collapse;
+}
+th{
+    font-size: 24px;
+    font-weight: bolder;
+    text-align: center;
+}
+span{
+    margin-left: 10%;
 }
 </style>
