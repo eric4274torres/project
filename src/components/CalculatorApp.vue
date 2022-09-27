@@ -2,15 +2,38 @@
   <form class="principal needs-validation">
     <div class="form1">
       <label>Bill</label>
-      <input v-on:input="calcular(porcentaje)" v-model="bill" type="text" id="bill" />
+      <input
+        v-on:input="calcular(porcentaje)"
+        v-model="bill"
+        type="text"
+        id="bill"
+      />
       <label class="margin">Select Tip %</label>
       <div class="botones">
-        <HelloWorld class="btnPorcentaje" v-on:click="calcular(i)"  :num=i v-for="i in numero" :key="i" />
-        <input type="text" placeholder="Cusstom" class="num" id="num" v-model="agregar" v-on:keyup.enter="agregarvalor(agregar)" />
+        <HelloWorld
+          class="btnPorcentaje"
+          v-on:click="calcular(i)"
+          :num="i"
+          v-for="i in numero"
+          :key="i"
+        />
+        <input
+          type="text"
+          placeholder="Cusstom"
+          class="num"
+          id="num"
+          v-model="agregar"
+          v-on:keyup.enter="agregarvalor(agregar)"
+        />
       </div>
       <div>
         <label for="" class="margin">Number of People</label>
-        <input v-on:input="calcular(porcentaje)" type="text" id="number" v-model="number" />
+        <input
+          v-on:input="calcular(porcentaje)"
+          type="text"
+          id="number"
+          v-model="number"
+        />
         <!-- <div class="valid-feedback">
             Looks good!
           </div> -->
@@ -36,13 +59,13 @@
 </template>
 
 <script>
-import HelloWorld from './HelloWorld.vue';
-  
+import HelloWorld from "./HelloWorld.vue";
+
 export default {
-  name:'CalculatorApp',
-  components:{
-    HelloWorld
-},
+  name: "CalculatorApp",
+  components: {
+    HelloWorld,
+  },
   data() {
     return {
       bill: 142.55,
@@ -52,36 +75,40 @@ export default {
       totalPersonaString: "0.00",
       amount: 0,
       agregar: null,
-      numero:[5,10,15,25,50]
-    }
+      numero: [5, 10, 15, 25, 50],
+    };
   },
   methods: {
     calcular(porcebtaje) {
       this.porcentaje = porcebtaje;
       this.amount = (this.bill * (porcebtaje / 100)) / this.number;
       this.amountString = this.amount.toFixed(2);
-      this.totalPersonaString = (this.bill / this.number + this.amount).toFixed(2);
+      this.totalPersonaString = (this.bill / this.number + this.amount).toFixed(
+        2
+      );
 
-      if(this.bill==0 && this.number==0){
-        this.amountString="0.00"
-        this.totalPersonaString="0.00"
+      if (this.bill == 0 && this.number == 0) {
+        this.amountString = "0.00";
+        this.totalPersonaString = "0.00";
       }
     },
-    agregarvalor(){
-      this.amount = (this.bill * (parseInt(this.agregar )/ 100)) / this.number;
+    agregarvalor() {
+      this.amount = (this.bill * (parseInt(this.agregar) / 100)) / this.number;
       // console.log(this.amount)
       this.amountString = this.amount.toFixed(2);
-      this.totalPersonaString = (this.bill / this.number + this.amount).toFixed(2);
+      this.totalPersonaString = (this.bill / this.number + this.amount).toFixed(
+        2
+      );
     },
-    reset(){
-      this.bill=null;
-      this.number=null;
-      this.amountString="0.00"
-      this.totalPersonaString="0.00"
-      this.agregar=null
-    }
-  }
-}
+    reset() {
+      this.bill = null;
+      this.number = null;
+      this.amountString = "0.00";
+      this.totalPersonaString = "0.00";
+      this.agregar = null;
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -116,7 +143,6 @@ export default {
   padding: 0% 4%;
   border-radius: 10px;
   user-select: none;
-
 }
 
 .display {
@@ -242,5 +268,4 @@ h1 {
 #number:focus {
   outline: 2px solid hsl(172, 67%, 45%);
 }
-
 </style>
