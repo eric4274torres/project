@@ -1,10 +1,13 @@
 <template>
     <div class="container">
         <form class="formulario">
-            <img class="imagen-formulario" src="../assets/images/image.png" alt="#" />
+            
 
             <div class="campo">
+                <div class="img-label">
+                <img class="imagen-formulario" src="../assets/images/image.png" />
                 <label for="nueva tarea">Nueva Tarea:</label>
+                </div>
                 <div>
                     <input type="text" placeholder="Nueva Tarea" id="nueva-tarea" />
                     <input type="submit" value="Agregar Nueva Tarea" />
@@ -25,7 +28,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+
+};
 </script>
 
 <style scoped>
@@ -34,42 +39,40 @@ export default {};
 }
 .container {
     max-width: 120rem;
-    width: 95%;
+    width: 100vh;
     background-color: white;
     margin: 0 auto;
-    border-radius: .5rem;
+    border-radius: 1.5rem;
+    padding: 1rem;
 }
 
 @media (min-width: 992px) {
     .container {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: (2, 1fr);
-        gap: 3rem;
+        gap: 1.5rem;
         height: auto;
     }
 }
 
 .formulario {
-    padding: 5rem 2rem;
+    padding: 4rem 2rem;
     grid-row: 1 / 3;
-    border-right: 2px dashed #e1e1e1;
 }
 
 .formulario label {
-    display: block;
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
+    font-size: 3rem;
 }
 
 @media (min-width: 768px) {
     .formulario input {
-        flex: 1;
+       flex: auto;
     }
 }
 
 .formulario input[type="text"] {
     padding: 1rem;
+    width: 50vh;
 }
 
 .formulario input[type="submit"] {
@@ -90,8 +93,7 @@ export default {};
 }
 
 .imagen-formulario {
-    width: 7rem;
-    margin-right: 2rem;
+    width: 5rem;
 }
 
 .campo:first-of-type {
@@ -100,8 +102,7 @@ export default {};
 
 .campo div {
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 @media (min-width: 768px) {
@@ -110,11 +111,12 @@ export default {};
         gap: 2rem;
     }
 }
-
+.img-label{
+    margin-bottom: 1rem;
+}
 .tareas h2 {
     padding: 0 2rem;
 }
-
 .tareas-pendientes {
     list-style: none;
     padding: 2rem;
@@ -180,4 +182,5 @@ export default {};
     margin: 1rem 0;
     font-size: 1.5rem;
 }
+
 </style>
